@@ -21,6 +21,13 @@ extension MainView {
                              .init(name: "Fornite", rating: "92"),
                              .init(name: "Madden 2023", rating: "88")]
         
+        
+        var cards: [SimpleCard] = [.init(title: "Level 1", time: 30),
+                                   .init(title: "Level 2", time: 45),
+                                   .init(title: "Level 3", time: 60),
+                                   .init(title: "Level 4", time: 75),
+                                   .init(title: "Level 5", time: 90)]
+        
         var path = NavigationPath()
     }
 }

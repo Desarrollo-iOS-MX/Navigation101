@@ -31,6 +31,15 @@ struct MainView: View {
                         }
                     }
                 }
+                
+                Section("Levels") {
+                    ForEach(viewModel.cards, id: \.title) { card in
+                        NavigationLink(value: card) {
+                            Text(card.title)
+                            Text("\(card.time)")
+                        }
+                    }
+                }
             }
             .navigationTitle("Gamming")
             .navigationDestination(for: Platform.self) { platform in
@@ -39,6 +48,10 @@ struct MainView: View {
             .navigationDestination(for: Game.self) { game in
                 GameView(game: game, games: viewModel.games, platforms: viewModel.platforms, path: $viewModel.path)
             }
+            .navigationDestination(for: SimpleCard.self) { card in
+                SimpleCardView(cardData: card, cards: viewModel.cards, path: $viewModel.path)
+            }
+            
         }
     }
 }
